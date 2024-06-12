@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\MPU6050.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\MPU6050.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6210000: Last Updated: Wed Jun 12 22:52:14 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6210000: Last Updated: Thu Jun 13 02:37:20 2024
 <BR><P>
 <H3>Maximum Stack Usage =        172 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -482,7 +482,6 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Delay_ms
 </UL>
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_I2C_Clear
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_I2C_Init
 </UL>
 
 <P><STRONG><a name="[10]"></a>EXTI0_IRQHandler</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, mpu6050.o(.text.EXTI0_IRQHandler))
@@ -521,7 +520,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[77]"></a>I2C1_Init</STRONG> (Thumb, 186 bytes, Stack size 0 bytes, myi2c.o(.text.I2C1_Init))
+<P><STRONG><a name="[77]"></a>I2C1_Init</STRONG> (Thumb, 170 bytes, Stack size 0 bytes, myi2c.o(.text.I2C1_Init))
 <BR><BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -624,11 +623,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6b]"></a>LCD_I2C_Init</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, mylcd.o(.text.LCD_I2C_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = LCD_I2C_Init &rArr; LCD_I2C_Write_CMD &rArr; I2C1_Write_Buffer &rArr; I2C1_Write
+<P><STRONG><a name="[6b]"></a>LCD_I2C_Init</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, mylcd.o(.text.LCD_I2C_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = LCD_I2C_Init &rArr; LCD_I2C_Write_CMD &rArr; I2C1_Write_Buffer &rArr; I2C1_Write
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_I2C_Write_CMD
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_ms
 </UL>
 <BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>

@@ -25,15 +25,13 @@ void LCD_I2C_Write_DATA(uint8_t data) {
 }
 
 // Initialize LCD via I2C
-void LCD_I2C_Init(void) {
-    Delay_ms(50);  		
+void LCD_I2C_Init(void) { 		
     LCD_I2C_Write_CMD(0x33);  // Initialization
     LCD_I2C_Write_CMD(0x32);  // Initialization
     LCD_I2C_Write_CMD(0x28);  // 4-bit mode, 2 lines, 5x7 font // function set
     LCD_I2C_Write_CMD(0x0C);  // Display ON, cursor OFF
     LCD_I2C_Write_CMD(0x06);  // Increment cursor
     LCD_I2C_Write_CMD(0x01);  // Clear display
-    Delay_ms(2);
 }
 
 // Clear the LCD display

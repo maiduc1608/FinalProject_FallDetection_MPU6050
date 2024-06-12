@@ -72,8 +72,8 @@ static int tick_count = 0;
 int main(void){
   SysClkConf_72MHz();
   LED_Init();
-	TIM2_Setup(7200,1000); //Red
-	TIM3_Setup(7200,5000); //Green
+	TIM2_Setup(7200,5000); //Red
+	TIM3_Setup(7200,10000); //Green
 	TIM3_GreenState(1);
   I2C1_Init();
 	LCD_I2C_Init();
@@ -124,7 +124,7 @@ void EXTI_config(void){
 	EXTI->IMR |= 1<<0|1<<1;
 	EXTI->EMR = 0;
 	EXTI->RTSR &= ~(1UL<<1 | 1ul<<0);
-	EXTI->FTSR |= 1<<1 | 1<<0;
+	EXTI->FTSR |= 1<<1 | 1<<0;  //falling trigger selected
 }
 
 void Enter_Stop_Mode(void) {

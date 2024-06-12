@@ -19,14 +19,8 @@ void I2C1_Init(void) {
 	I2C1->CCR |= 1<<15; //Fast mode
 	I2C1->CCR |= 0x3C;
 	I2C1->TRISE = 37;  // Maximum rise time
-	//ITBUFEN
-	I2C1->CR2 |= 1<<10;
-	//ITEVTEN
-//	I2C1->CR2 |= 1<<9;
   // Enable I2C1
   I2C1->CR1 |= 1<<0;
-	// Enable I2C1 acknowledge
-  I2C1->CR1 |= 1<<10;
 }
 
 // Start I2C communication
@@ -109,7 +103,6 @@ void I2C1_Read1Byte(uint8_t slave_address, uint8_t *data){
 }
 
 void I2C1_ReadMulti(uint8_t slave_address,uint8_t size, uint8_t *buffer){
-//	buffer = (char)malloc(size * sizeof(char));
 	I2C1_enACK();
 	//1. send start
 	I2C1_Start();
