@@ -89,7 +89,7 @@ void I2C1_send1Byte(uint8_t slave_address, uint8_t reg_address, uint8_t data){
 }
 
 void I2C1_Read1Byte(uint8_t slave_address, uint8_t *data){
-	I2C1->CR1 |= 1<<10;
+	I2C1->CR1 |= 1<<10; //en ack
 	//1. send start
 	I2C1_Start();
 	//2. send salve address
